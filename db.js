@@ -1,22 +1,22 @@
-const { Sequelize } = require("sequelize");
+const {Sequelize} =require('sequelize')
 
-const sequelize = new Sequelize('test_db', 'postgres', 'sundar@12345',{
+
+const sequelize = new Sequelize('test','postgres','sundar@12345',{
     host: 'localhost',
     dialect: 'postgres',
-    port: 5432,
-    logging: false,
-});
+    port:'5432',
+    logging: false
+    })
 
-async function testConnection() {
-    try{
-        await sequelize.authenticate();
-        console.log('DB connection successful............................')
+    async function testConnection(){
+        try{
+            await sequelize.authenticate();
+            console.log('Connection is successfully........');
     }
     catch(error){
-        console.error('Unable to connect to the database...............', error)
+        console.log('Connection failed........', error)
+    }}
+    testConnection();
 
-}    
-}
-testConnection()
 
-module.exports = sequelize;
+    module.exports =sequelize;

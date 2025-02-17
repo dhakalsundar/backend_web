@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 
 const sequelize =  require("./database/db")
 //creating a server
-const app = express();
+const app = express();1
 
 // creating a port
 const PORT = process.env.PORT || 5000;
@@ -17,7 +17,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.get('/home',(req,res)=>{
-    res.send("Welcome to home page");
+    res.send("<h1>Welcome to home page</h1>");
 })
 
 // running on port
